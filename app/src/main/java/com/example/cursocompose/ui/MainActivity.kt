@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 
@@ -21,19 +23,30 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MyTestSuperTest()
                 }
             }
         }
     }
 }
 
-
-
-@Preview(showBackground = true)
+@Preview(
+    name = "1ra vista",
+    heightDp = 80,
+    widthDp = 200,
+    showBackground = true,
+    showSystemUi = true,
+    apiLevel = 29,
+    device = Devices.DEFAULT)
 @Composable
-fun GreetingPreview() {
-    CursocomposeTheme {
-        Greeting("Android")
-    }
+fun MyTestSuperTest(){
+    MySuperText("lulu")
 }
+
+
+@Composable
+fun MySuperText(cad:String){
+    Text(text = "soy $cad hola :)-- fdf "
+    )
+}
+
