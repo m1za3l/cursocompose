@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
+
 
 @Preview(
     name = "1ra vista",
@@ -50,3 +50,4 @@ fun MySuperText(cad:String){
     )
 }
 
+}
