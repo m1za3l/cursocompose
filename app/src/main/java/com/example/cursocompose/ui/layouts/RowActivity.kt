@@ -1,4 +1,4 @@
-package com.example.cursocompose.ui
+package com.example.cursocompose.ui.layouts
 
 import android.os.Bundle
 import android.widget.HorizontalScrollView
