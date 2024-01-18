@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
@@ -78,5 +79,28 @@ class Estados {
             Text(text = "ha sido pulsado : $count veces ")
 
         }
+    }
+
+    //Patron para ponerlo  o usarlo en otro lado, lo que esta en en el textField
+    //mandarlo desde el activity, a otra clase, de padre a hijo
+
+    //controlar un estado en un remember en una funcion
+    //hacerlo sin estados, no cargar al compose
+    //sacar el estado e un miembro superior
+
+    //recibir el dato en el padre
+
+    //va recibir el estado del objeto, y una FUNCION y esta funcion regresara un String
+
+    /*
+    add: import androidx.compose.runtime.*
+    en Main Activity:
+       var myText by remember {mutableStateOf("")}
+       TextosContendores().MyTextField(myText){myText=it}
+     */
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun MyTextField(name:String, onValueChanged: (String)->Unit ){
+        TextField(value = name, onValueChange = {onValueChanged(it)})
     }
 }

@@ -1,6 +1,7 @@
 package com.example.cursocompose.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.cursocompose.ui.componentes.TextosContendores
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 import androidx.compose.runtime.*
+import com.example.cursocompose.ui.componentes.Botones
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    Botones().MyOutlinedButton()
                 }
             }
         }
