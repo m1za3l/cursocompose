@@ -18,6 +18,7 @@ import com.example.cursocompose.ui.componentes.TextosContendores
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 import androidx.compose.runtime.*
 import com.example.cursocompose.ui.componentes.Botones
+import com.example.cursocompose.ui.componentes.ProgresoBar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Botones().MyOutlinedButton()
+                    ProgresoBar().MyProgressBarPorcentaje()
                 }
             }
         }

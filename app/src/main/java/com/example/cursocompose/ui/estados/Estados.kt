@@ -93,7 +93,7 @@ class Estados {
     //va recibir el estado del objeto, y una FUNCION y esta funcion regresara un String
 
     /*
-    add: import androidx.compose.runtime.*
+    todo: add: import androidx.compose.runtime.*
     en Main Activity:
        var myText by remember {mutableStateOf("")}
        TextosContendores().MyTextField(myText){myText=it}
