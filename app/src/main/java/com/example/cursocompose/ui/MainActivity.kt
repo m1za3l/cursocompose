@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -18,6 +19,8 @@ import com.example.cursocompose.ui.componentes.TextosContendores
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 import androidx.compose.runtime.*
 import com.example.cursocompose.ui.componentes.Botones
+import com.example.cursocompose.ui.componentes.ControlDeSeleccion
+import com.example.cursocompose.ui.componentes.Exersice
 import com.example.cursocompose.ui.componentes.ProgresoBar
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ProgresoBar().MyProgressBarPorcentaje()
+
                 }
             }
         }
