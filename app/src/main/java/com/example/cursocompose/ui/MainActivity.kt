@@ -21,6 +21,7 @@ import androidx.compose.runtime.*
 import com.example.cursocompose.ui.componentes.Botones
 import com.example.cursocompose.ui.componentes.ControlDeSeleccion
 import com.example.cursocompose.ui.componentes.Exersice
+import com.example.cursocompose.ui.componentes.OtrosComponenetes
 import com.example.cursocompose.ui.componentes.ProgresoBar
 
 class MainActivity : ComponentActivity() {
@@ -30,10 +31,10 @@ class MainActivity : ComponentActivity() {
             CursocomposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    //modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    OtrosComponenetes().MyRangeSlider()
                 }
             }
         }
