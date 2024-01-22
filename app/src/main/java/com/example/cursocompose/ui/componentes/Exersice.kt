@@ -29,6 +29,7 @@ class Exersice {
     @Composable
     fun getOptions(titles:List<String>):List<CheckInfo>{
         return titles.map {
+            //todo: muy importante esta bariable debe estar adentro, porque corresponde acada objeto
             var estado by remember{mutableStateOf(false)}
 
             //aki mismo va oir el cambio en el metodo y regresara un valor, lo cabia el state

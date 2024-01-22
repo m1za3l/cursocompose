@@ -45,7 +45,7 @@ class RowActivity : ComponentActivity() {
     @Preview(heightDp = 250, showBackground = true)
     @Composable
     fun MyRowWeightManual(){
-        Row(Modifier.fillMaxSize(), horizontalArrangement=Arrangement.SpaceBetween){
+        Row(Modifier.fillMaxSize()){
             Text("misael",modifier = Modifier
                 .background(Color.Red)
                 .weight(1f))
