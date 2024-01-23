@@ -15,6 +15,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -95,7 +96,7 @@ class ColumnActivity : ComponentActivity() {
     fun MyColumnAutomaticoMarginTopBottom(){
         Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly) {
             Text("hola misael",modifier = Modifier.background(Color.Red))
-            Text("hola misael ap",modifier = Modifier.background(Color.Yellow))
+            Text("hola misael ap",modifier = Modifier.background(Color.Yellow).align(Alignment.End))
             Text("hola misael",modifier = Modifier.background(Color.Blue))
             Text("hola misael jm",modifier = Modifier.background(Color.Green))
         }
