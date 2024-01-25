@@ -1,5 +1,6 @@
 package com.example.cursocompose.ui.componentes
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -12,9 +13,19 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Face
+import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.Face
 import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material.icons.sharp.Face
+import androidx.compose.material.icons.twotone.Face
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +33,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.graphics.vector.DefaultTintColor
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -103,6 +117,74 @@ class Imagenes {
         }
     }
 
+    @Preview(showSystemUi = true)
+    @Composable
+    fun MyIconFill() {
+        //relleno
+       Column(modifier= Modifier.fillMaxSize()) {
+            Icon(
+                imageVector = Icons.Outlined.Face,
+                modifier = Modifier.size(30.dp),
+                contentDescription = null,
+                tint = Color.Red
+            )
+           Icon(
+               imageVector = Icons.Filled.Face,
+               modifier = Modifier.size(30.dp),
+               contentDescription = null,
+               tint = Color.Red
+           )
+
+           Button(
+               onClick = { /*TODO*/ },
+               enabled=false,
+               colors = ButtonDefaults.buttonColors(
+                   containerColor = Color.Red,
+                   contentColor =  Color.White
+               )
+           ) {
+               Icon(
+                   imageVector = Icons.TwoTone.Face,
+                   modifier = Modifier.size(30.dp),
+                   contentDescription = null
+               )
+           }
+
+           Button(
+               onClick = { /*TODO*/ },
+               enabled=true,
+               colors = ButtonDefaults.buttonColors(
+                   containerColor = Color.Red,
+                   contentColor =  Color.White
+               )
+               ) {
+               Icon(
+
+                   imageVector = Icons.TwoTone.Face,
+                   modifier = Modifier.size(15.dp),
+                   contentDescription = null
+               )
+           }
+
+           Button(
+               onClick = { /*TODO*/ },
+               enabled=true,
+               border = BorderStroke(5.dp,Color.Red),
+               colors = ButtonDefaults.buttonColors(
+                   containerColor = Color.White,
+                   contentColor =  Color.Red
+               )
+           ) {
+               Icon(
+                   imageVector = Icons.Filled.Face,
+                   modifier = Modifier.size(30.dp),
+                   contentDescription = null
+               )
+           }
+
+        }
+    }
+
 
     @Preview(showSystemUi = true)
     @Composable
@@ -138,7 +220,9 @@ class Imagenes {
     @Preview(showSystemUi = true)
     @Composable
     fun MyHeaderBodyFooter(){
-        Box(modifier = Modifier.fillMaxSize().padding(14.dp)){
+        Box(modifier = Modifier
+            .fillMaxSize()
+            .padding(14.dp)){
             MyHeader(Modifier.align(Alignment.TopEnd))
             MyHeader(Modifier.align(Alignment.Center))
             MyHeader(Modifier.align(Alignment.BottomStart))

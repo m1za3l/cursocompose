@@ -24,6 +24,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import com.example.cursocompose.ui.componentes.Dialogs
+import com.example.cursocompose.ui.layouts.ExercisesLayouts
+import com.example.cursocompose.ui.login.basic.ExersiceLogin
 import com.example.cursocompose.ui.login.basic.LoginBasic
 import com.example.cursocompose.ui.login.basic.LoginBasicV2
 
@@ -34,10 +36,9 @@ class MainActivity : ComponentActivity() {
             CursocomposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LoginBasicV2().LoginScreen()
+                    ExercisesLayouts().CardTwitter()
                 }
             }
         }
