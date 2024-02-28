@@ -9,11 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.cursocompose.ui.componentes.MyModalDrawer
-import com.example.cursocompose.ui.componentes.MyNavegacionConArgumentosOPTION
-import com.example.cursocompose.ui.componentes.MyNavegacionConArgumentosObligatorios
-import com.example.cursocompose.ui.componentes.MyNavegacionScreen
-import com.example.cursocompose.ui.componentes.MyScaffolds
+import com.example.cursocompose.ui.mvvm.login.LoginMvvm
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 
 
@@ -26,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyNavegacionConArgumentosOPTION().MyTest()
+
                 }
             }
         }
