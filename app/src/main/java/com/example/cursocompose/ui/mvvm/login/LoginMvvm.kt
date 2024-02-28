@@ -101,19 +101,17 @@ class LoginMvvm : ComponentActivity(){
 
         val email:String by loginViewModel.email.observeAsState(initial = "")
         val password:String by loginViewModel.password.observeAsState(initial = "")
-        var isLoginEnable by remember { mutableStateOf(false) }
+        val isLoginEnable:Boolean by loginViewModel.isLoginEnable.observeAsState(initial = false)
 
         Column(modifier=modifier) {
             ImageLogo(Modifier.align(Alignment.CenterHorizontally))
             Spacer(modifier = Modifier.size(16.dp))
             Email(email){
                 loginViewModel.onLoginChanged(email = it,password =password)
-                isLoginEnable = enableLogin(email,password)
             }//no es q este centrado es q ocupa todo el ancho
             Spacer(modifier = Modifier.size(16.dp))
             Password(password){
                 loginViewModel.onLoginChanged(email =email,password =it)
-                isLoginEnable = enableLogin(email,password)
             }
             Spacer(modifier = Modifier.size(16.dp))
             ForgotPasword(Modifier.align(Alignment.End))
@@ -176,9 +174,6 @@ class LoginMvvm : ComponentActivity(){
             Text(text = "Login In")
         }
     }
-
-    fun enableLogin(email:String, password:String) = Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length >6
-
 
     @Composable
     fun ForgotPasword(modifier: Modifier) {
