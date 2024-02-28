@@ -100,7 +100,7 @@ class LoginMvvm : ComponentActivity(){
     fun Body(modifier: Modifier, loginViewModel: LoginViewModel){
 
         val email:String by loginViewModel.email.observeAsState(initial = "")
-        var password by remember{ mutableStateOf("") }
+        val password:String by loginViewModel.password.observeAsState(initial = "")
         var isLoginEnable by remember { mutableStateOf(false) }
 
         Column(modifier=modifier) {
@@ -108,10 +108,11 @@ class LoginMvvm : ComponentActivity(){
             Spacer(modifier = Modifier.size(16.dp))
             Email(email){
                 loginViewModel.onLoginChanged(it)
+                isLoginEnable = enableLogin(email,password)
             }//no es q este centrado es q ocupa todo el ancho
             Spacer(modifier = Modifier.size(16.dp))
             Password(password){
-                password=it
+                loginViewModel.onLoginChanged2(it)
                 isLoginEnable = enableLogin(email,password)
             }
             Spacer(modifier = Modifier.size(16.dp))
@@ -165,7 +166,7 @@ class LoginMvvm : ComponentActivity(){
             onClick = { /*TODO*/ },
             colors= ButtonDefaults.buttonColors(
                 containerColor = Color(0XFF4EA8E9),
-                disabledContainerColor = Color(0XFF78C8F9),
+                disabledContainerColor = Color(0XFFC4E6FA),
                 contentColor = Color.White,
                 disabledContentColor = Color.White
             ),
