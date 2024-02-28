@@ -214,7 +214,7 @@ class Dialogs {
 
 
     @Composable
-    fun MyAccounts(user:Accounts, onClick: (String) -> Unit) {
+    fun MyAccounts(user: Accounts, onClick: (String) -> Unit) {
         Row(modifier= Modifier
             .padding(14.dp)
             .clickable {

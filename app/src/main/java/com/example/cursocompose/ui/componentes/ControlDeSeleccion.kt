@@ -215,7 +215,7 @@ class ControlDeSeleccion {
                     }
      */
     @Composable
-    fun MyListRadioButtonMejorado(user:User){
+    fun MyListRadioButtonMejorado(user: User){
         Row() {
             RadioButton(
                 selected = user.enable,
