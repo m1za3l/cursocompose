@@ -12,11 +12,8 @@ class LoginViewModel : ViewModel(){
     val email : LiveData<String> = _email
     val password : LiveData<String> = _password
 
-    fun onLoginChanged(email:String){
+    fun onLoginChanged(email:String, password:String){
         _email.value = email
-    }
-
-    fun onLoginChanged2(password:String){
         _password.value = password
     }
 

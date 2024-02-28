@@ -107,12 +107,12 @@ class LoginMvvm : ComponentActivity(){
             ImageLogo(Modifier.align(Alignment.CenterHorizontally))
             Spacer(modifier = Modifier.size(16.dp))
             Email(email){
-                loginViewModel.onLoginChanged(it)
+                loginViewModel.onLoginChanged(email = it,password =password)
                 isLoginEnable = enableLogin(email,password)
             }//no es q este centrado es q ocupa todo el ancho
             Spacer(modifier = Modifier.size(16.dp))
             Password(password){
-                loginViewModel.onLoginChanged2(it)
+                loginViewModel.onLoginChanged(email =email,password =it)
                 isLoginEnable = enableLogin(email,password)
             }
             Spacer(modifier = Modifier.size(16.dp))
