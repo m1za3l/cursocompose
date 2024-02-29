@@ -23,6 +23,8 @@ class LoginCleanArqViewModel : ViewModel(){
     private val _isLoginEnable = MutableLiveData<Boolean>()
     val isLoginEnable : LiveData<Boolean> = _isLoginEnable
 
+    private val _isProgress = MutableLiveData<Boolean>()
+    val isProgress : LiveData<Boolean> = _isProgress
     fun onLoginChanged(email:String, password:String){
         _email.value = email
         _password.value = password
@@ -35,6 +37,7 @@ class LoginCleanArqViewModel : ViewModel(){
 
     //esta funcion se va llamar cuando el boton de login haya sido pulsado
     fun onLoginSelected(){
+        _isProgress.value = true
         viewModelScope.launch{
             val result = loginUseCase(email.value!!, password.value!!)
             if(result){
@@ -44,5 +47,9 @@ class LoginCleanArqViewModel : ViewModel(){
                 Log.i("m1m1m", "puedes ir: $result")
             }
         }
+    }
+
+    fun cancelProgressBar(){
+        _isProgress.value = false
     }
 }

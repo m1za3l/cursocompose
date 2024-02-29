@@ -24,6 +24,7 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -76,9 +77,19 @@ class LoginScreenCleanArq : ComponentActivity(){
         Box(modifier = Modifier
             .fillMaxSize()
             .padding(24.dp)){
-            Header(Modifier.align(Alignment.TopEnd))
-            Body(Modifier.align(Alignment.Center),loginViewModel)
-            Footer(Modifier.align(Alignment.BottomCenter))
+            val isProgress:Boolean by loginViewModel.isProgress.observeAsState(initial = false)
+            if(isProgress){
+                Box(modifier = Modifier
+                    .fillMaxSize()
+                    .clickable {  loginViewModel.cancelProgressBar()}
+                    .align(Alignment.Center)){
+                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                }
+            }else {
+                Header(Modifier.align(Alignment.TopEnd))
+                Body(Modifier.align(Alignment.Center), loginViewModel)
+                Footer(Modifier.align(Alignment.BottomCenter))
+            }
         }
     }
 
