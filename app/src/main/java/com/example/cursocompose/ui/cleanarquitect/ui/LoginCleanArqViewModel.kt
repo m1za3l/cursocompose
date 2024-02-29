@@ -40,6 +40,8 @@ class LoginCleanArqViewModel : ViewModel(){
             if(result){
                 //navegar a la siguiente ventana
                 Log.i("m1m1m", "puedes ir: $result")
+            }else{
+                Log.i("m1m1m", "puedes ir: $result")
             }
         }
     }

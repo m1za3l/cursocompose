@@ -116,7 +116,7 @@ class LoginScreenCleanArq : ComponentActivity(){
             ForgotPasword(Modifier.align(Alignment.End))
             Spacer(modifier = Modifier.size(16.dp))
             //email y contraseña valida se habilita el boton
-            LoginButton(Modifier, isLoginEnable)
+            LoginButton(Modifier, isLoginEnable, loginViewModel)
             Spacer(modifier = Modifier.size(16.dp))
             LoginDivider()
             Spacer(modifier = Modifier.size(16.dp))
@@ -158,9 +158,9 @@ class LoginScreenCleanArq : ComponentActivity(){
     }
 
     @Composable
-    fun LoginButton(modifier: Modifier, loginEnable: Boolean) {
+    fun LoginButton(modifier: Modifier, loginEnable: Boolean, loginViewModel: LoginCleanArqViewModel) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { loginViewModel.onLoginSelected()},
             colors= ButtonDefaults.buttonColors(
                 containerColor = Color(0XFF4EA8E9),
                 disabledContainerColor = Color(0XFFC4E6FA),

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Cursocompose"
         tools:targetApi="31">
         <activity
-            android:name="com.example.cursocompose.ui.mvvm.login.LoginMvvm"
+            android:name="com.example.cursocompose.ui.cleanarquitect.ui.LoginScreenCleanArq"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Cursocompose">
