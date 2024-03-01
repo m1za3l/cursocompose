@@ -1,6 +1,7 @@
 package com.example.cursocompose.ui.cleanarquitect.login.domain
 
 import com.example.cursocompose.ui.cleanarquitect.login.data.LoginRespository
+import javax.inject.Inject
 
 
 /*
@@ -14,7 +15,7 @@ y sera a traves de casos de uso
 -si necesito recuperar el usuario llamaria a ese caso de uso
 -vamos separando la logica de negocio
  */
-class LoginUseCase {
+class LoginUseCase @Inject constructor(){
 
     //el view model es el que  llamara a viewModel
 
