@@ -15,11 +15,10 @@ y sera a traves de casos de uso
 -si necesito recuperar el usuario llamaria a ese caso de uso
 -vamos separando la logica de negocio
  */
-class LoginUseCase @Inject constructor(){
+class LoginUseCase @Inject constructor(private val repository:LoginRespository){
 
     //el view model es el que  llamara a viewModel
 
-    private val repository = LoginRespository()
 
     //nos ahorammos a que llame a una funcion operator invoke
     suspend operator fun invoke (user:String, password:String):Boolean{
