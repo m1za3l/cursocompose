@@ -1,7 +1,7 @@
 package com.example.cursocompose.ui.cleanarquitect.login.data.network
 
-import com.example.cursocompose.ui.cleanarquitect.core.network.RetrofitHelper
 import kotlinx.coroutines.Dispatchers
+import retrofit2.Retrofit
 import javax.inject.Inject
 
 
@@ -15,9 +15,17 @@ el que tenga el objeto de retrofit que hicimos antes:
         class RetrofitHelper
         getRetrofit()
  */
-class LoginService @Inject constructor() {
 
-    private val retrofit = RetrofitHelper.getRetrofit()
+/*
+TODO: DAGGER HILT "LOS PROVIDERS"
+-retrofit no esta PREPARADO
+-creo un directorio di en core
+-un modulo, las clases q se crean oara proveernos cosas
+
+ */
+class LoginService @Inject constructor(private val retrofit: Retrofit) {
+
+    //private val retrofit = RetrofitHelper.getRetrofit()
 
     suspend fun doLogin(user:String, password:String):Boolean{
         return with(Dispatchers.IO){
