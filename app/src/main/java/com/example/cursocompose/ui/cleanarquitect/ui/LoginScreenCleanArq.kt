@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -53,9 +54,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cursocompose.R
 import com.example.cursocompose.ui.theme.CursocomposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-//loginBasic2
+/*
+aki estamos pasando una isntancia antes:
+                    LoginScreen(LoginCleanArqViewModel())
+
+ */
+@AndroidEntryPoint
 class LoginScreenCleanArq : ComponentActivity(){
+
+    //asi es como preparamos el viewModel, y asi lo inyectamos
+    private val loginViewModel : LoginCleanArqViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +76,7 @@ class LoginScreenCleanArq : ComponentActivity(){
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //lo bueno seria inyectarlo
-                    LoginScreen(LoginCleanArqViewModel())
+                    LoginScreen(loginViewModel)
                 }
             }
         }

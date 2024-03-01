@@ -7,9 +7,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cursocompose.ui.cleanarquitect.login.domain.LoginUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginCleanArqViewModel : ViewModel(){
+/*
+val loginUseCase = LoginUseCase()
+esto va venor dentro aparentement
+constructor(loginUseCase)
+
+ */
+@HiltViewModel
+class LoginCleanArqViewModel @Inject constructor(): ViewModel(){
 
     val loginUseCase = LoginUseCase()
 
