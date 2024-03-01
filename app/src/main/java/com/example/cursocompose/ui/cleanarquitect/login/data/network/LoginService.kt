@@ -2,6 +2,7 @@ package com.example.cursocompose.ui.cleanarquitect.login.data.network
 
 import com.example.cursocompose.ui.cleanarquitect.core.network.RetrofitHelper
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
 
 //todo: data puede pasar datos no solo de retrodit de bd tambien
@@ -14,7 +15,7 @@ el que tenga el objeto de retrofit que hicimos antes:
         class RetrofitHelper
         getRetrofit()
  */
-class LoginService {
+class LoginService @Inject constructor() {
 
     private val retrofit = RetrofitHelper.getRetrofit()
 
