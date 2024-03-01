@@ -18,9 +18,9 @@ constructor(loginUseCase)
 
  */
 @HiltViewModel
-class LoginCleanArqViewModel @Inject constructor(): ViewModel(){
+class LoginCleanArqViewModel @Inject constructor(private val loginUseCase:LoginUseCase): ViewModel(){
 
-    val loginUseCase = LoginUseCase()
+    //val loginUseCase = LoginUseCase()
 
     //solo se puede acceder desde adentro del livedTA
     private val _email = MutableLiveData<String>()
