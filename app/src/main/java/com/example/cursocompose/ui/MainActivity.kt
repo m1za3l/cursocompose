@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //borrar
+                    //deja esto
                 }
             }
         }
