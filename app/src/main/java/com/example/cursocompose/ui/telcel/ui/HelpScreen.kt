@@ -38,7 +38,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.ui.platform.LocalContext
 import com.example.cursocompose.ui.componentes.RecyckerViews
 
-
+//commentario
 class HelpScreen : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
