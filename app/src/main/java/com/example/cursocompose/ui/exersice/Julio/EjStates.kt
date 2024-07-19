@@ -1,4 +1,4 @@
-package com.example.cursocompose.ui.exersice
+package com.example.cursocompose.ui.exersice.Julio
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -137,7 +137,7 @@ class EjStates {
 
     //todo:Data class, con amado de lista y una variable saveanle, y una funcion que escucha
     @Composable
-    fun MyListRadioBtnMejorado(alumno:Alumno){
+    fun MyListRadioBtnMejorado(alumno: Alumno){
 
         Row() {
             RadioButton(
