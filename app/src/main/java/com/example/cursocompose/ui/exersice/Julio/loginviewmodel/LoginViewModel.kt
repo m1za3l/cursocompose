@@ -10,10 +10,22 @@ class LoginViewModelEjJul: ViewModel() {
     private val _email = MutableLiveData<String>()
     val email : LiveData<String> = _email
 
+    private val _pass = MutableLiveData<String>()
+    val pass : LiveData<String> = _pass
+
+    private val _enableBtn = MutableLiveData<Boolean>()
+    val enableBtn : LiveData<Boolean> =_enableBtn
+
     //haces un metodo cuando vas a observar, y cambiar la variable
     //la devuelves y pasa al valor desde donde se puede acceder
-    fun onEmailChange(email: String) {
-        _email.value = email
+    fun onValueChange(mEmail: String, mPass:String) {
+        _email.value = mEmail
+        _pass.value = mPass
+        _enableBtn.value = logicBtn(mEmail, mPass)
+    }
+
+    fun logicBtn(email:String, pass:String):Boolean{
+        return pass.length>5 && email.contains("@")
     }
 
 }

@@ -46,6 +46,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.cursocompose.ui.exersice.julio.loginviewmodel.LoginViewModelEjJul
 import com.example.cursocompose.ui.theme.CursocomposeTheme
 
 //debe ser un acitiviy
@@ -71,7 +72,7 @@ class EjLoginJulio: ComponentActivity() {
     //Aquime donde lo llames metes la insntancia, seria mejor inyectarlos
     // c desde la activity
     @Composable
-    fun LoginScreen(loginViewModel:LoginViewModelEjJul){
+    fun LoginScreen(loginViewModel: LoginViewModelEjJul){
         /*
         tienes varias opciones
         1.-un box que alinee en top end, center, y topbutton
@@ -104,18 +105,18 @@ class EjLoginJulio: ComponentActivity() {
             //pero aun ocupas Unit, para regresar la variable a la unica fuente de la verdad
             //var email by rememberSaveable { mutableStateOf("") }
             val email by loginViewModel.email.observeAsState(initial = "")
-            var pass by rememberSaveable { mutableStateOf("") }
-            var enableBtn by rememberSaveable { mutableStateOf(false) }
+            val pass by loginViewModel.pass.observeAsState(initial = "")
+            val enableBtn by loginViewModel.enableBtn.observeAsState(initial = false)
 
             Email(email){
                 //aki en la logica de viewModel  cambias la logica
                 //mandas lo que regresa la funcion email, no email
                 //test
-                loginViewModel.onEmailChange(email=it)
+                loginViewModel.onValueChange(it, pass)
             }
             Spacer(modifier = Modifier.size(16.dp))
             Password(pass) {
-                pass = it
+                loginViewModel.onValueChange(email, it)
             }
             Spacer(modifier = Modifier.size(16.dp))
             LoginButton(Modifier, enableBtn)
