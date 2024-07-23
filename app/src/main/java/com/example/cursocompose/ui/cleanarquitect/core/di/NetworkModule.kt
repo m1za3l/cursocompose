@@ -33,7 +33,7 @@ class NetworkModule {
             .build()
     }
 
-    @Singleton
+    @Singleton //mantengan una única instancia durante all el proyecto.
     @Provides //como le paso retrofit a esto, y como arriba ya esta inyectado lo hace solo
     fun provideLoginClient(retrofit:Retrofit):LoginClient{//hay que decrile q vamos a proveer
         return retrofit.create(LoginClient::class.java)//y vamos a poner lo que teniamos, en login Services
