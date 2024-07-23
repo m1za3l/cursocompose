@@ -1,4 +1,4 @@
-package com.example.cursocompose.ui.exersice.Julio
+package com.example.cursocompose.ui.exersice.julio
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
