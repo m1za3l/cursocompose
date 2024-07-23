@@ -110,6 +110,7 @@ class EjLoginJulio: ComponentActivity() {
             Email(email){
                 //aki en la logica de viewModel  cambias la logica
                 //mandas lo que regresa la funcion email, no email
+                //test
                 loginViewModel.onEmailChange(email=it)
             }
             Spacer(modifier = Modifier.size(16.dp))
