@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cursocompose"
-        android:name=".todoapp.TodoApp"
+        android:name=".ui.TodoApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.cursocompose.ui.cleanarquitect.ui.LoginScreenCleanArq"
+            android:name="com.example.cursocompose.ui.MainAddTaskActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Cursocompose">
