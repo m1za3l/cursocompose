@@ -1,5 +1,6 @@
 package com.example.cursocompose.ui.cleanarquitect.core.di
 
+import com.example.cursocompose.ui.cleanarquitect.login.data.network.LoginClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,12 +18,13 @@ tablade alacance : https://cursokotlin.com/dagger-hilt-inyeccion-de-dependencias
  */
 
 @Module // esto es un nmodulo
-@InstallIn(SingletonComponent::class)
+@InstallIn(SingletonComponent::class)//esto es un alcance, de appliattion, activity etc
 class NetworkModule {
     //proveeme retrofit
 
     //sea una unica instancia siguiendo el patron de SINGLETON, y no la etiqueta de arriba q no tiene nada q ver con S
-    @Singleton
+    //proveedor nuevo de retrofit
+    @Singleton // si es un singleton  de verdad
     @Provides
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
@@ -30,4 +32,13 @@ class NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())//convierte jsoin en data clase
             .build()
     }
+
+    @Singleton
+    @Provides //como le paso retrofit a esto, y como arriba ya esta inyectado lo hace solo
+    fun provideLoginClient(retrofit:Retrofit):LoginClient{//hay que decrile q vamos a proveer
+        return retrofit.create(LoginClient::class.java)//y vamos a poner lo que teniamos, en login Services
+    // -> val response = retrofit.create(LoginClient::class.java).doLogin(),
+    // pero sin el llamado al metdoo
+    }
+
 }
